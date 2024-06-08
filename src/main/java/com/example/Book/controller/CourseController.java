@@ -76,6 +76,10 @@ public class CourseController {
     public String searchCourses(@RequestParam("query") String query, Model model) {
         List<Course> courses = courseService.searchCourseByName(query);
         model.addAttribute("courses", courses);
+
+        // Thêm đoạn code sau để truyền giá trị tìm kiếm vào trang kết quả
+        model.addAttribute("searchQuery", query);
+
         return "list";
     }
 }

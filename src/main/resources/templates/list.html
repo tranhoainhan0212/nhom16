@@ -114,8 +114,10 @@
   </div>
 </nav>
 <form class="d-flex ms-auto" th:action="@{/course/search}" method="get">
-  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="query">
-  <button class="btn btn-outline-success" type="submit">Search</button>
+    <div class="input-group">
+      <input type="text" name="query" class="form-control" placeholder="Search by name" th:value="${searchQuery}">
+      <button class="btn btn-outline-secondary" type="submit">Search</button>
+    </div>
 </form>
 <div class="container">
   <h2>Course List</h2>
